@@ -27,7 +27,7 @@ public class ProductRepository : IProductRepository
 
     public async Task<Product> GetProduct(string id)
     {
-        return await _context.Products.Find(p => true).FirstOrDefaultAsync();
+        return await _context.Products.Find(p => p.Id == id).FirstOrDefaultAsync();
     }
 
     public async Task<IEnumerable<Product>> GetProductByCategory(string category)
