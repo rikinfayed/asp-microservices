@@ -5,7 +5,7 @@ namespace Catalog.API.Data;
 
 public class CatalogContext : ICatalogContext
 {
-    CatalogContext(IConfiguration configuration) {
+    public CatalogContext(IConfiguration configuration) {
         var client = new MongoClient(configuration.GetValue<String>("DatabaseSetting:ConnectionString"));
 
         var database = client.GetDatabase(configuration.GetValue<String>("DatabaseSetting:DatabaseName"));
